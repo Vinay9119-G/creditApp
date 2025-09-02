@@ -10,7 +10,8 @@ const JsUser = {
     [sym1]: "my identifier", // to use symbol as a property name we have to use square brackets
     "Full name": "Vinay Ambawat",
     age: 18,
-    lacation: "India",
+    // village : "nithari",
+    location: "Nithari",
     email: "ambawatavinay@gmail.com",
     isloggedIn: false,
     lastLoginDays: ["monday", "saturday"],
@@ -32,7 +33,19 @@ console.log(JsUser[sym1]); // to access symbol property we have to use square br
 JsUser.age = 19; // to update object property
 console.log(JsUser.age);
 
-Object.freeze(JsUser); // to make object immutable means we cannot change or add or delete any property of the object
+// Object.freeze(JsUser); 
+// to make object immutable means we cannot change or add or delete any property of the object
 JsUser.age = 20; // this will not work
 console.log(JsUser.age);
 
+// Funtions in object 
+
+JsUser.greetings = function() {
+    console.log("Hello vinay Ambawataji"); // this keyword is used to access the properties of the object
+}
+JsUser.greetingTwo = function() {
+    console.log(`Hello AmbawataSaab of village ${this.location}`); // this keyword is used to access the properties of the object
+}
+
+console.log(JsUser.greetings()); // to call the function inside the object
+console.log(JsUser.greetingTwo()); // to call the function inside the object
